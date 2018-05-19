@@ -1,13 +1,14 @@
 module memory(
+	// datapath_core interface
 	input	logic				clock,
 	input	logic				we,
 	input	logic	[7:0]		MA,
 	input logic [7:0]		WD,
 	output logic [7:0]	RD,
-	// ioport
+	// ioport interface
 	input logic [7:0]		iport,
 	output logic [7:0]	oport,
-	// program
+	// programmer (monitor) interface
 	input	logic				prg_clock,
 	input	logic				prg_we,
 	input	logic	[7:0]		prg_MA,
@@ -21,7 +22,7 @@ module memory(
 	logic [7:0] ram_RD;
 	
 	
-	dualportram dualportram(
+	dualportram dualportram( // On Chip Memory RAM: 2-PORT from IP Library
 		.clock_a		(clock),
 		.wren_a		(ram_we),
 		.address_a	(MA),
@@ -29,7 +30,7 @@ module memory(
 		.q_a			(ram_RD),
 		//
 		.clock_b		(prg_clock),
-		.wren_b		(prg_wewe),
+		.wren_b		(prg_we),
 		.address_b	(prg_MA),
 		.data_b		(prg_WD),
 		.q_b			(prg_RD)

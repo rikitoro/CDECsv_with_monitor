@@ -18,8 +18,8 @@ module datapath_core(
 	output logic [7:0]	I,			// -> to controller unit
 	output logic [2:0]	SZCy,		// -> to controller unit
 	// debug signal
-	input logic [2:0] 	dbg_addr,	// 000: {Xbus, PC}, 001: {A, B},  010: {C, FLG},     				 011: {T, R}
-	output logic [15:0]	dbg_data 	// 100: {WDR, MAR}, 101: {RD, I}, 110: {1'b0, xsrc, 1'b0,xdst}, 100: {aluop, 8'h00} 
+	input logic [2:0] 	dbg_addr,	// 000: {PC, A}, 001: {B, C},        010: {MAR, WDR},              011: {RD, I}
+	output logic [15:0]	dbg_data 	// 100: {T, R},  101: {Xbus, aluop}, 110: {1'b0, xsrc, 1'b0,xdst}, 100: 16'h0000 
 );
 
 	logic [7:0]	Xbus;	// Xbus
@@ -176,17 +176,17 @@ module datapath_core(
 	///////////////////
 	////   debug   ////
 	///////////////////
-
+	
 	mux8 select_dbgdata(
 		.sel	(dbg_addr),
-		.d0	({Xbus, PC}),
-		.d1	({A, B}),
-		.d2	({C, FLG}),
-		.d3	({T, R}),
-		.d4	({MAR, WDR}),
-		.d5	({RD, I}),
+		.d0	({PC, A}),
+		.d1	({B, C}),
+		.d2	({MAR, WDR}),
+		.d3	({RD, I}),
+		.d4	({T, R}),
+		.d5	({Xbus, aluop}),
 		.d6	({1'b0, xsrc, 1'b0, xdst}),
-		.d7	({aluop, 8'h00}),
+		.d7	(16'h0000),
 		.y		(dbg_data)
 	);
 
