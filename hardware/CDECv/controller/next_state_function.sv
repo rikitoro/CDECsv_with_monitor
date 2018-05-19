@@ -60,6 +60,8 @@ module next_state_function(
 			{`state_F2,  8'b1111_1111, 3'bxxx}: next_state = `state_HLT;
 			{`state_HLT, 8'bxxxx_xxxx, 3'bxxx}: next_state = `state_HLT;
 			
+			default: next_state = `state_HLT;
+			
 		endcase
 
 endmodule
