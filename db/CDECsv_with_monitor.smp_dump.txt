@@ -1,0 +1,9 @@
+
+State Machine - |CDECv_shell_DE0CV|monitor:monitor|monitor_nios2_processor:nios2_processor|monitor_nios2_processor_cpu:cpu|monitor_nios2_processor_cpu_nios2_oci:the_monitor_nios2_processor_cpu_nios2_oci|monitor_nios2_processor_cpu_debug_slave_wrapper:the_monitor_nios2_processor_cpu_debug_slave_wrapper|monitor_nios2_processor_cpu_debug_slave_tck:the_monitor_nios2_processor_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

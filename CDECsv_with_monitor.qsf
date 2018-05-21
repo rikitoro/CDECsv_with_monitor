@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CEBA4F23C7
-set_global_assignment -name TOP_LEVEL_ENTITY CDECsv_with_monitor
+set_global_assignment -name TOP_LEVEL_ENTITY CDECv_shell_DE0CV
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:56:33  MAY 18, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
@@ -46,10 +46,18 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name QSYS_FILE hardware/monitor/monitor.qsys
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/output_function.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/next_state_function.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/control_unit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/constants_state_code.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/constants_control_code.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/clock_generator/toggle.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/clock_generator/prescalar.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/clock_generator/clock_generator.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/register.sv
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/line_decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/alu.sv
@@ -58,4 +66,67 @@ set_global_assignment -name QIP_FILE hardware/CDECv/memory/dualportram.qip
 set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/memory/memory.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/memory/io_device.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/memory/address_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/CDECv.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/cycle_counter/cycle_counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv_shell_DE0CV.sv
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/hex_decoder/hex_decoder.sv
+set_location_assignment PIN_M9 -to clock_50MHz
+set_location_assignment PIN_U7 -to clock_manual_key
+set_location_assignment PIN_L2 -to dbg_F0_led
+set_location_assignment PIN_L1 -to dbg_clock_led
+set_location_assignment PIN_U13 -to iport_sw[0]
+set_location_assignment PIN_V13 -to iport_sw[1]
+set_location_assignment PIN_T13 -to iport_sw[2]
+set_location_assignment PIN_T12 -to iport_sw[3]
+set_location_assignment PIN_W9 -to n_reset_key
+set_location_assignment PIN_M6 -to n_reset_monitor_key
+set_location_assignment PIN_AA2 -to oport_led[0]
+set_location_assignment PIN_AA1 -to oport_led[1]
+set_location_assignment PIN_W2 -to oport_led[2]
+set_location_assignment PIN_Y3 -to oport_led[3]
+set_location_assignment PIN_N2 -to oport_led[4]
+set_location_assignment PIN_N1 -to oport_led[5]
+set_location_assignment PIN_U2 -to oport_led[6]
+set_location_assignment PIN_U1 -to oport_led[7]
+set_location_assignment PIN_T20 -to uart_rxd
+set_location_assignment PIN_AB13 -to sel_clock_sw[0]
+set_location_assignment PIN_AB12 -to sel_clock_sw[1]
+set_location_assignment PIN_P14 -to dbg_SZCy_led[0]
+set_location_assignment PIN_W19 -to dbg_SZCy_led[1]
+set_location_assignment PIN_AA15 -to dbg_addr_sw[0]
+set_location_assignment PIN_AB15 -to dbg_addr_sw[1]
+set_location_assignment PIN_AA14 -to dbg_addr_sw[2]
+set_location_assignment PIN_N9 -to dbg_SZCy_led[2]
+set_location_assignment PIN_U21 -to dbg_data_hex0[0]
+set_location_assignment PIN_V21 -to dbg_data_hex0[1]
+set_location_assignment PIN_W22 -to dbg_data_hex0[2]
+set_location_assignment PIN_W21 -to dbg_data_hex0[3]
+set_location_assignment PIN_Y22 -to dbg_data_hex0[4]
+set_location_assignment PIN_Y21 -to dbg_data_hex0[5]
+set_location_assignment PIN_AA22 -to dbg_data_hex0[6]
+set_location_assignment PIN_AA20 -to dbg_data_hex1[0]
+set_location_assignment PIN_AB20 -to dbg_data_hex1[1]
+set_location_assignment PIN_AA19 -to dbg_data_hex1[2]
+set_location_assignment PIN_AA18 -to dbg_data_hex1[3]
+set_location_assignment PIN_AB18 -to dbg_data_hex1[4]
+set_location_assignment PIN_AA17 -to dbg_data_hex1[5]
+set_location_assignment PIN_U22 -to dbg_data_hex1[6]
+set_location_assignment PIN_Y19 -to dbg_data_hex2[0]
+set_location_assignment PIN_AB17 -to dbg_data_hex2[1]
+set_location_assignment PIN_AA10 -to dbg_data_hex2[2]
+set_location_assignment PIN_Y14 -to dbg_data_hex2[3]
+set_location_assignment PIN_V14 -to dbg_data_hex2[4]
+set_location_assignment PIN_AB22 -to dbg_data_hex2[5]
+set_location_assignment PIN_AB21 -to dbg_data_hex2[6]
+set_location_assignment PIN_Y16 -to dbg_data_hex3[0]
+set_location_assignment PIN_W16 -to dbg_data_hex3[1]
+set_location_assignment PIN_Y17 -to dbg_data_hex3[2]
+set_location_assignment PIN_V16 -to dbg_data_hex3[3]
+set_location_assignment PIN_U17 -to dbg_data_hex3[4]
+set_location_assignment PIN_V18 -to dbg_data_hex3[5]
+set_location_assignment PIN_V19 -to dbg_data_hex3[6]
+set_location_assignment PIN_T18 -to uart_txd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

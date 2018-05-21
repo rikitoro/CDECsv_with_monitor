@@ -5,12 +5,13 @@ module CDECv(
 	input logic [7:0]		iport,
 	output logic [7:0]	oport,
 	// halt
-	output logic 			halt,
 	// debug signal
-	input logic [2:0]		dbg_addr, // 000: {PC, A}, 001: {B, C},        010: {MAR, WDR},              011: {RD, I}
-	output logic [15:0]	dbg_data, // 100: {T, R},  101: {Xbus, aluop}, 110: {1'b0, xsrc, 1'b0,xdst}, 100: 16'h0000
+	input logic [2:0]		dbg_addr, // 000: {PC, A}, 001: {B, C},        010: {MAR, WDR}, 011: {RD, I}
+	output logic [15:0]	dbg_data, // 100: {T, R},  101: {Xbus, 8'h00}, 110: control,    100: 16'h0000
+											 // control = {1'b0, xsrc, 1'b0, xdst, aluop, 1'b0, Rwe, FLGwe, MEMwe}
 	output logic [2:0]	dbg_SZCy,
 	output logic 			dbg_F0,
+	output logic 			dbg_halt,
 	// programmer (monitor) interface
 	input logic				prg_clock,
 	input logic 			prg_we,
@@ -32,6 +33,9 @@ module CDECv(
 	// memory <- controller
 	logic 		MEMwe;
 	
+	// dbg_data
+	logic [15:0] dbg_data_datapath;
+	
 	
 	datapath_core datapath_core(
 		.clock		(clock),
@@ -50,10 +54,10 @@ module CDECv(
 		.SZCy			(SZCy),
 		// debug signal
 		.dbg_addr   (dbg_addr),
-		.dbg_data   (dbg_data) 	 
+		.dbg_data   (dbg_data_datapath) 	 
 	);
 
-	controller controller(
+	control_unit control_unit(
 		.clock		(clock),
 		.reset		(reset),
 		// to datapath
@@ -68,7 +72,7 @@ module CDECv(
 		.SZCy			(SZCy),
 		// debug signal
 		.dbg_F0		(dbg_F0),
-		.halt			(halt)
+		.dbg_halt	(dbg_halt)
 	);
 
 	memory memory(
@@ -89,6 +93,16 @@ module CDECv(
 		.prg_RD		(prg_RD)	
 	);
 
+	
+	//////////////////
+	/// debug data ///
+	//////////////////
+	
+	assign dbg_SZCy = SZCy;
 
+	logic [15:0] control;
+	assign control 	= {1'b0, xsrc, 1'b0, xdst, aluop, 1'b0, Rwe, FLGwe, MEMwe};
+	assign dbg_data 	= (dbg_addr == 3'b110) ? control : dbg_data_datapath;
+	
 endmodule
 

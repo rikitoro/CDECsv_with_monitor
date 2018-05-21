@@ -1,0 +1,233 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "oport_led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "oport_led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "oport_led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "oport_led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "oport_led[4]",
+					"strict" : false
+				},
+				{
+					"name" : "oport_led[5]",
+					"strict" : false
+				},
+				{
+					"name" : "oport_led[6]",
+					"strict" : false
+				},
+				{
+					"name" : "oport_led[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_data_hex0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SZCy_led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SZCy_led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SZCy_led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_clock_led",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_F0_led",
+					"strict" : false
+				},
+				{
+					"name" : "uart_txd",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_addr_sw[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_addr_sw[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_addr_sw[1]",
+					"strict" : false
+				},
+				{
+					"name" : "n_reset_key",
+					"strict" : false
+				},
+				{
+					"name" : "iport_sw[0]",
+					"strict" : false
+				},
+				{
+					"name" : "iport_sw[1]",
+					"strict" : false
+				},
+				{
+					"name" : "iport_sw[2]",
+					"strict" : false
+				},
+				{
+					"name" : "iport_sw[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sel_clock_sw[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sel_clock_sw[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50MHz",
+					"strict" : false
+				},
+				{
+					"name" : "clock_manual_key",
+					"strict" : false
+				},
+				{
+					"name" : "n_reset_monitor_key",
+					"strict" : false
+				},
+				{
+					"name" : "uart_rxd",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
