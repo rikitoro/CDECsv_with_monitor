@@ -1,0 +1,8 @@
+1526955226334	Move 'hello_world_small.c' to 'src'
+1526978079997	Rename resource 'src'
+1526978127380	Move 'hello_world_small.c' to 'src'
+1526978218688	Move 'hello_world_small.c' to 'src0'
+1526979264380	Rename resource 'src0'
+1527223193875	Rename resource 'src'
+1527224547791	Move 'hello_world_small.c' to 'src'
+1527224710370	Move 'uart.h' to 'driver'

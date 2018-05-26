@@ -48,31 +48,9 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name QSYS_FILE hardware/monitor/monitor.qsys
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/output_function.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/next_state_function.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/control_unit.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/constants_state_code.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/constants_control_code.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/clock_generator/toggle.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/clock_generator/prescalar.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/clock_generator/clock_generator.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/register.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/mux.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/line_decoder.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/alu.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/datapath_core/datapath_core.sv
-set_global_assignment -name QIP_FILE hardware/CDECv/memory/dualportram.qip
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/memory/memory.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/memory/io_device.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/memory/address_decoder.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/CDECv.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/cycle_counter/cycle_counter.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv_shell_DE0CV.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE hardware/hex_decoder/hex_decoder.sv
 set_location_assignment PIN_M9 -to clock_50MHz
 set_location_assignment PIN_U7 -to clock_manual_key
 set_location_assignment PIN_L2 -to dbg_F0_led
@@ -129,4 +107,27 @@ set_location_assignment PIN_U17 -to dbg_data_hex3[4]
 set_location_assignment PIN_V18 -to dbg_data_hex3[5]
 set_location_assignment PIN_V19 -to dbg_data_hex3[6]
 set_location_assignment PIN_T18 -to uart_txd
+set_global_assignment -name QIP_FILE software/programmer/mem_init/meminit.qip
+set_global_assignment -name QSYS_FILE hardware/monitor/monitor.qsys
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/output_function.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/next_state_function.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/control_unit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/constants_state_code.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/control_unit/constants_control_code.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/clock_generator/toggle.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/clock_generator/prescalar.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/clock_generator/clock_generator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/register.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/line_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/components/alu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/datapath_core/datapath_core.sv
+set_global_assignment -name QIP_FILE hardware/CDECv/memory/dualportram.qip
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/memory/memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/memory/io_device.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/memory/address_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv/CDECv.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/cycle_counter/cycle_counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/CDECv_shell_DE0CV.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hardware/hex_decoder/hex_decoder.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
