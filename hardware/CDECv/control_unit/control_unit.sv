@@ -36,7 +36,7 @@ module control_unit(
     .next_state (next_state)
   );
 
-  output_function instruction_decoder(
+  instruction_decoder instruction_decoder(
     .state      (state),
     .I          (I),
     .SZCy       (SZCy),

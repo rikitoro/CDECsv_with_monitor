@@ -1,7 +1,7 @@
 `include "constants_state_code.sv"
 `include "constants_control_code.sv"
 
-module output_function(
+module instruction_decoder(
   input   logic [7:0]   state,
   input   logic [7:0]   I,
   input   logic [2:0]   SZCy,
