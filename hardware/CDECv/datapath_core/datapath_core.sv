@@ -181,7 +181,7 @@ module datapath_core(
     .sel  (dbg_addr),
     .d0   ({PC, A}),
     .d1   ({B, C}),
-    .d2   ({MAR, WDR}),
+    .d2   ({MA, WD}),
     .d3   ({RD, I}),
     .d4   ({T, R}),
     .d5   ({Xbus, 8'h00}),
