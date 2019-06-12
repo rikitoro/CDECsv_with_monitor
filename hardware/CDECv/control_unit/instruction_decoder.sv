@@ -90,10 +90,10 @@ module instruction_decoder(
       {`state_JC1, 8'bxxxx_xxxx, 3'bxxx}: control = {`xsrc_R,  `xdst_PC,  `aluop_ZERO, 3'b000};
       {`state_JC2, 8'bxxx1_0000, 3'b1xx}: control = {`xsrc_RD, `xdst_PC,  `aluop_ZERO, 3'b000}; // JS adrs (S == 1)
       {`state_JC2, 8'bxxx1_0000, 3'b0xx}: control = {`xsrc_PC, `xdst_PC,  `aluop_ZERO, 3'b000}; // JS adrs (S == 0)
-      {`state_JC2, 8'bxxx0_1000, 3'bx1x}: control = {`xsrc_RD, `xdst_PC,  `aluop_ZERO, 3'b000}; // JS adrs (S == 1)
-      {`state_JC2, 8'bxxx0_1000, 3'bx0x}: control = {`xsrc_PC, `xdst_PC,  `aluop_ZERO, 3'b000}; // JS adrs (S == 0)
-      {`state_JC2, 8'bxxx0_0100, 3'bxx1}: control = {`xsrc_RD, `xdst_PC,  `aluop_ZERO, 3'b000}; // JS adrs (S == 1)
-      {`state_JC2, 8'bxxx0_0100, 3'bxx0}: control = {`xsrc_PC, `xdst_PC,  `aluop_ZERO, 3'b000}; // JS adrs (S == 0)
+      {`state_JC2, 8'bxxx0_1000, 3'bx1x}: control = {`xsrc_RD, `xdst_PC,  `aluop_ZERO, 3'b000}; // JZ adrs (Z == 1)
+      {`state_JC2, 8'bxxx0_1000, 3'bx0x}: control = {`xsrc_PC, `xdst_PC,  `aluop_ZERO, 3'b000}; // JZ adrs (Z == 0)
+      {`state_JC2, 8'bxxx0_0100, 3'bxx1}: control = {`xsrc_RD, `xdst_PC,  `aluop_ZERO, 3'b000}; // JC adrs (Cy == 1)
+      {`state_JC2, 8'bxxx0_0100, 3'bxx0}: control = {`xsrc_PC, `xdst_PC,  `aluop_ZERO, 3'b000}; // JC adrs (Cy == 0)
 
       //
       default:                            control = {`xsrc_PC, `xdst_PC,  `aluop_ZERO, 3'b000};
